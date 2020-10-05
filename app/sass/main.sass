@@ -1,0 +1,526 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+.noscroll
+	position: fixed
+	height: 100%
+	width: 100%
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+
+// preloader
+.preloader
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100vh
+	background: #fff
+	z-index: 99
+	transition: 1s all
+	opacity: 1
+	visibility: visible
+	display: flex
+	align-items: center
+	justify-content: center
+	.loader
+		width: 30%
+		height: 40%
+		background: url(../img/page_loading.gif) center no-repeat
+		background-size: cover
+		animation: 1s spin infinite linear
+		
+	&.done
+		opacity: 0
+		visibility: hidden
+
+
+// header start
+
+.header
+	position: relative
+	width: 100%
+	// height: 60vh
+	padding-bottom: 100px
+	display: flex
+	.top_head
+		position: fixed
+		z-index: 10
+		background-color: #ffffff
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 0px 5%
+		height: 80px
+		width: 100%
+		transition: all .25s ease
+		&.header-scrolled
+			box-shadow: 0px 2px 5px rgba(127, 137, 161, 0.3)
+		.logo
+			margin-left: 50px
+			z-index: 11
+			img
+				width: 65px
+				padding: 8px
+				border: 3px solid #EEF3F6
+				border-radius: 50%
+				transition: all .2s ease
+				&:hover
+					border: 3px solid #B9BDC0
+		.top_menu
+			font-family: 'Barlow', sans-serif
+			transition: all .25s ease
+			ul
+				list-style: none
+				display: flex
+				justify-content: space-between
+				transition: all .25s ease
+				margin-right: 100px
+				li
+					color: #B9BDC0
+					a
+						padding: 0px 20px
+						color: #B9BDC0
+						letter-spacing: 3px
+						font-size: 16px
+						font-weight: 200
+						text-decoration: none
+						&:hover
+							color: darken(#B9BDC0, 25)
+					.active_menu
+						color: #333333	
+		.mob_menu
+			display: none
+			padding-top: 100px
+			margin-top: 200px
+			background-color: #fff
+			width: 100%
+			box-shadow: 0px 2px 5px rgba(127, 137, 161, 0.3)
+			transition: all .25s ease
+			ul
+				list-style: none 
+				display: flex
+				justify-content: space-between
+				padding: 0
+				flex-direction: column
+				li
+					color: #B9BDC0
+					padding: 15px 0
+					a
+						padding: 15px 5px
+						color: #B9BDC0
+						font-weight: 200
+						font-size: 16px
+						text-decoration: none
+						font-weight: 200
+						&:hover
+							color: darken(#B9BDC0, 45)
+					.active_menu
+						color: #333333
+		.lang_block
+			display: flex
+			justify-content: space-between
+			align-items: center
+			position: absolute
+			top: 15px
+			right: 5%
+			.pt , .eng
+				padding: 0px 15px
+				a
+					color: rgba(0,0,0,.4)
+					text-decoration: none
+					font-weight: 200
+					text-transform: uppercase
+					font-size: 12px
+					&:hover
+						color: rgba(0,0,0, .8)
+			.pt
+				border-right: 1px solid rgba(0,0,0,.05)
+	&_maintext
+		margin-top: 160px
+		padding: 30px 20px 
+		margin-left: 40px
+	&_title
+		position: relative
+		font-size: 55px
+		margin: 0
+		font-weight: 400
+		line-height: 1.4	
+	&_span
+		letter-spacing: 4px
+		font-size: 14px
+		font-weight: 200
+		text-transform: uppercase
+		margin: 0
+		font-family: 'Barlow', sans-serif
+		color: #1E6BAD
+	&_descr
+		font-size: 50px
+		line-height: 1.4
+	&_mail
+		font-family: 'Barlow', sans-serif
+		letter-spacing: 3px
+		position: fixed
+		font-size: 14px
+		top: 40%
+		right: -5%
+		transform: rotate(90deg)
+		color: #1E6BAD
+		border-radius: 1px
+		padding: 2px 8px
+		z-index: 5
+		transition: all .4s ease
+		
+// header end
+
+// projectos start
+.h4
+	font-size: 26px
+	font-weight: 400
+	margin: 0
+.h4_modified
+	margin-top: 15px
+.projectos
+	margin-bottom: 10px
+	&_top
+		&__title
+			font-family: Barlow, sans-serif
+			font-size: 15px
+			color: #B9BDC0
+		&__descr
+			font-size: 36px
+	&_content
+		border-top: 1px solid lighten(#B9BDC0,20)
+		padding: 20px 10px
+		&_title
+			img
+				width: 50px
+				padding: 5px
+				margin-right: 10px
+			line-height: 1.2
+			margin-bottom: 0
+		&__subtitle
+			margin-top: 0
+			padding: 10px 0
+			font-size: 18px
+			margin-bottom: 5px
+		.sub_modified
+			margin-top: -10px
+		&_question
+			display: block
+			margin-top: 35px
+			margin-bottom: 20px
+		&_menu
+			list-style: none
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			width: 100%
+			padding: 0px 0px
+			margin-bottom: 30px
+			li
+				padding-right: 15px
+				a
+					padding: 15px 5px
+					color: #B9BDC0
+					font-weight: 400
+					font-size: 16px
+					text-decoration: none
+					font-weight: 200
+					&:hover
+						color: darken(#B9BDC0, 45)
+		&_scroll
+			margin-top: 15px
+			height: 480px
+			overflow-y: scroll
+			width: 85%
+			.last_p
+				color: #3C8AE4
+				font-weight: 200
+				font-size: 16px
+				margin-top: 25px
+		a
+			color: darken(orange, 3)
+		&__imgblock
+			img
+				width: 100%
+				border-radius: 2px
+		&_title
+			font-size: 32px
+		.title_uppercase
+			text-transform: uppercase
+		&_btnbox
+			padding-bottom: 20px
+			padding-top: 20px
+		.cndt_btn
+			background-color: #3C8AE4
+			padding: 7px 25px
+			border-radius: 2px
+			border: 1px solid transparent
+			color: #ffffff
+			margin: 0px
+			text-decoration: none
+			&:hover
+				background-color: #fff
+				color: #3C8AE4
+				border: 1px solid #3C8AE4
+		.info_btn
+			background-color: #ffffff
+			padding: 7px 25px
+			border-radius: 2px
+			border: 1px solid #3C8AE4
+			color: #3C8AE4
+			margin: 0px 10px
+			text-decoration: none
+			&:hover
+				background-color: #3C8AE4
+				color: #ffffff
+				border: 1px solid #ffffff
+		&_subtitle
+			margin-top: 5px
+			font-weight: 700
+			font-size: 18px
+			margin-bottom: 5px
+
+.projectos_01,.projectos_02, .projectos_03, .projectos_04
+	margin-top: 30px	
+
+// projectos end
+
+
+
+// oportunidades start
+
+.oportunidades
+	margin-top: 50px
+	&_top
+		&_title
+			font-family: Barlow, sans-serif
+			font-size: 15px
+			color: #B9BDC0
+		&_descr
+			font-size: 36px
+	&_block
+		margin: 10px 0
+		&_top
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 11px 20px
+			border-radius: 2px
+			background-color: #F2F6FD
+			&__title
+				margin-left: 20px
+				font-size: 19px
+				transition: color .4s ease
+				&:hover
+					color: #3C8AE4
+					cursor: pointer
+			&__box
+				.ops_appbtn
+					padding: 6px 30px
+					margin: 0px 20px
+					background-color: #3C8AE4
+					color: #ffffff
+					border: 1px solid transparent
+					transition: all .25s ease
+					text-decoration: none
+					&:hover
+						background-color: #fff
+						color: #3C8AE4
+						border: 1px solid #3C8AE4
+						border-radius: 3px
+				.ops_arr
+					cursor: pointer
+					width: 12px
+					transition: transform .25s ease
+				.arr_active
+					transform: rotate(90deg)
+					transition: transform .25s ease
+		&_content
+			display: none
+			margin-left: 25px
+			ul
+				list-style: none
+				li
+					position: relative
+					&:before
+						position: absolute
+						top: 14px
+						left: -15px
+						vertical-align: middle
+						display: inline-block
+						width: 8px
+						height: 1px
+						background: #333333
+						content: ""
+	.ver_mais
+		background-color: #fff
+		border: 1px solid #3C8AE4
+		padding: 2px 32px
+		color: #3C8AE4
+		border-radius: 4px
+		transition: all .2s ease
+		text-decoration: none
+		&:hover
+			background-color: #3C8AE4
+			color: #ffffff
+			border: 1px solid #ffffff
+		&_block
+			width: 100%
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			margin-top: 20px
+			margin-bottom: 60px
+		
+
+// oportunidades end
+
+// footer start
+
+.footer
+	margin-bottom: 30px
+	&_content
+		margin-top: 20px
+		position: relative
+		.tothemoon
+			padding: 20px
+			color: #B9BDC0
+			font-weight: 200
+			font-size: 16px
+			cursor: pointer
+			vertical-align: middle
+			img
+				width: 15px
+				margin: 10px
+		.mailbox
+			font-family: 'Barlow', sans-serif
+			text-align: center
+			letter-spacing: 3px
+			font-size: 16px
+		.social_block
+			position: absolute
+			top: 30%
+			right: 5%
+			text-align: center
+			a 
+				margin: auto
+				padding: 5px
+				vertical-align: middle
+				img
+					width: 15px
+					vertical-align: middle
+					transition: all ease .45s
+					&:hover
+						transform: rotate(360deg)
+				i
+					transition: all .2s ease
+					color: #B9BDC0
+					
+					vertical-align: middle
+					font-size: 18px
+// footer end
+
+
+// Containers edit
+
+.left_container
+	margin-left: 0
+	padding-left: 0
+	padding-right: 5%
+	width: auto
+.right_container
+	margin-right: 0
+	padding-right: 0
+	padding-left: 5%
+	width: auto
+
+.footer_container
+	padding-left: 0
+	padding-right: 0
+	width: 1300px
+.foot_hr
+	width: 90%
+// Containers edit
+
+
+// Hamburger
+
+.hamburger
+	display: none
+	position: absolute
+	z-index: 98
+	right: 10%
+	top: 35px
+	color: #B9BDC0
+	.hamburger-box
+		width: 30px
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+	border-radius: 0
+	width: 35px
+	height: 1.5px
+	background-color: #B9BDC0
+
+
+
+// Hamburger
+
+@import "media"
