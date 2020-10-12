@@ -7,5 +7,5 @@
 	Artem Chernii
 </p>
 <p>
-	Projetus Europeus
+	Projetus Europeus | PDMFC
 </p>
