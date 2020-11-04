@@ -24,7 +24,7 @@ gulp.task('browser-sync', function () {
 		// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
 	});
 });
-1232312323312213
+123123123124555
 // Пользовательские скрипты проекта
 
 gulp.task('common-js', function () {
